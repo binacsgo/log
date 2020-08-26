@@ -9,8 +9,8 @@ type ZapLoggerWapper struct {
 	logger *zap.SugaredLogger
 }
 
-// NewZapLoggerWapper return a pointer to ZapLoggerWapper
-func NewZapLoggerWapper(logger *zap.SugaredLogger) *ZapLoggerWapper {
+// NewZapLoggerWrapper return a pointer to ZapLoggerWapper
+func NewZapLoggerWrapper(logger *zap.SugaredLogger) *ZapLoggerWapper {
 	return &ZapLoggerWapper{
 		logger: logger,
 	}
@@ -18,7 +18,7 @@ func NewZapLoggerWapper(logger *zap.SugaredLogger) *ZapLoggerWapper {
 
 // With return a new Logger with context
 func (z *ZapLoggerWapper) With(ctx ...interface{}) Logger {
-	return NewZapLoggerWapper(z.logger.With(ctx...))
+	return NewZapLoggerWrapper(z.logger.With(ctx...))
 }
 
 // Debug ...
