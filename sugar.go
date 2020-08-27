@@ -22,6 +22,11 @@ func init() {
 	sugar = NewZapLoggerWrapper(initSugarLogger().Sugar())
 }
 
+// Sugar return sugar logger
+func Sugar() *ZapLoggerWapper {
+	return sugar
+}
+
 func initSugarLogger() *zap.Logger {
 	if !path.IsAbs(sugarLogFile) {
 		sugarLogFile = path.Join(sugarRootPath, sugarLogFile)
